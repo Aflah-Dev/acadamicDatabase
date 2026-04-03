@@ -1,0 +1,27 @@
+{
+  "name": "student-academic-record-management-system-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Student Academic Record Management System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "migrate": "node src/database/migrate.js",
+    "seed": "node src/database/seed.js"
+  },
+  "keywords": [
+    "student",
+    "academic",
+    "records",
+    "management"
+  ],
+  "author": "Mulu-Beshada",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.13.1"
+  }
+}

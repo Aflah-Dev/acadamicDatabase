@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-500: #2d7a47;
+  --brand-600: #1f5f36;
+  --line-100: #dde7de;
+  --line-200: #ced9cf;
+  --ink-900: #173727;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply m-0 text-[#1f2f24] antialiased;
+    font-family: "Nunito Sans", "Segoe UI", sans-serif;
+    background-color: #f7faf7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply border bg-transparent;
+    border-color: var(--line-100);
+    box-shadow: none;
+  }
+
+  .panel-soft {
+    @apply border bg-[#fbfdfb];
+    border-color: var(--line-100);
+  }
+
+  .page-title {
+    @apply mb-1 text-2xl font-semibold tracking-tight text-[#204f2f] md:text-4xl;
+  }
+
+  .page-subtitle {
+    @apply mb-6 text-sm text-[#4f715f] md:text-base;
+  }
+
+  .field-label {
+    @apply mb-1 block text-xs font-bold uppercase tracking-[0.04em] text-[#3f5b48];
+  }
+
+  .field-input {
+    @apply w-full border bg-white px-3 py-2.5 text-sm text-slate-700 transition placeholder:text-slate-400 focus:outline-none focus:ring-2;
+    border-color: var(--line-200);
+    --tw-ring-color: rgba(45, 122, 71, 0.16);
+  }
+
+  .field-input:focus {
+    border-color: var(--brand-500);
+  }
+
+  .btn-brand {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-50;
+    background-color: var(--brand-500);
+    border: 1px solid transparent;
+  }
+
+  .btn-brand:hover {
+    background-color: var(--brand-600);
+  }
+
+  .btn-neutral {
+    @apply inline-flex items-center justify-center border bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition;
+    border-color: var(--line-200);
+  }
+
+  .btn-neutral:hover {
+    background-color: #f0f6ed;
+    border-color: var(--line-100);
+  }
+
+  .alert-ok {
+    @apply border bg-emerald-50 px-4 py-2.5 text-sm font-semibold text-emerald-800;
+    border-color: #c4e7d1;
+  }
+
+  .alert-error {
+    @apply border border-rose-200 bg-rose-50 px-4 py-2.5 text-sm font-semibold text-rose-700;
+  }
+
+  .status-chip {
+    @apply inline-flex px-2.5 py-1 text-xs font-semibold;
+  }
+
+  .status-chip-neutral {
+    @apply bg-slate-100 text-slate-600;
+  }
+
+  .status-chip-success {
+    @apply bg-emerald-100 text-emerald-700;
+  }
+
+  .status-chip-danger {
+    @apply bg-rose-100 text-rose-700;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 border-l-2 border-transparent px-3 py-2 text-[0.95rem] font-semibold text-[#3d5f49] transition;
+  }
+
+  .sidebar-link:hover {
+    background-color: #f1f6f1;
+    color: var(--ink-900);
+  }
+
+  .sidebar-link-active {
+    color: var(--ink-900);
+    border-left-color: var(--brand-500);
+    background-color: #eef5ef;
+  }
+
+  .table-wrap {
+    @apply overflow-x-auto;
+  }
+
+  .table-clean {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .table-clean th {
+    @apply whitespace-nowrap px-3 py-2 text-left text-xs font-bold uppercase tracking-[0.06em] text-[#2e5f3e] sm:px-4 sm:py-3;
+  }
+
+  .table-clean td {
+    @apply whitespace-nowrap px-3 py-2 text-xs text-[#2f4338] sm:px-4 sm:py-3 sm:text-sm;
+  }
+
+  .fade-in {
+    animation: fade-slide 260ms ease both;
+  }
+}
+
+@keyframes fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
